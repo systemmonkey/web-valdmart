@@ -1,0 +1,278 @@
+:root {
+  /* Breakpoints */
+  /* 1366px -> 1999px */
+  --xlg: 1920px;
+  /* 1200px -> 992 */
+  --lg: 1200px;
+  /* 991 -> 769 */
+  --md: 991px;
+  /* 768 -> 577 */
+  --sm: 768px;
+  /* 576 -> 0 */
+  --xs: 576px;
+
+  /* Margins  */
+  --margin-sm: 8pt;
+  --margin-md: 16pt;
+  --margin-lg: 24pt;
+  --margin-xlg: 32pt;
+  /*--margin-sm: 40pt;*/
+
+  /* Colors */
+  --primary: #260c34;
+  --secondary: #b60200;
+  --white: #ffffff;
+  --dark-filter: rgba(0, 0, 0, 0.6);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background-color: var(--primary);
+}
+
+.navbar {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  z-index: 100;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar a {
+  display: block;
+  text-decoration: none;
+  font-family: "Bebas Neue";
+  font-size: 28px;
+  color: var(--white);
+}
+
+.navbar_left {
+  display: block;
+}
+
+.page_container {
+  display: block;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: var(--white);
+  font-family: "Bebas Neue", cursive, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bebas Neue", cursive, sans-serif;
+}
+
+p {
+  font-family: "Helvetica", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 61px;
+  line-height: 85px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 68px;
+}
+
+h3 {
+  font-size: 39px;
+  line-height: 54px;
+}
+
+h4 {
+  font-size: 31px;
+  line-height: 43px;
+}
+
+h5 {
+  font-size: 25px;
+  line-height: 35px;
+}
+
+h6 {
+  font-size: 20px;
+
+  line-height: 28px;
+}
+
+.block-1,
+.block-2,
+.block-3,
+.block-4,
+.block-5,
+.block-6 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: var(--lg);
+  height: 100vh;
+  margin: auto;
+  padding: 22pt;
+}
+
+.container_fluid {
+  width: 100%;
+  max-width: var(--xlg);
+  height: 100vh;
+  margin: auto;
+  padding: 22pt;
+}
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+
+.width_mid {
+  margin: var(--margin-md);
+}
+
+.block-1 {
+  background-image: url("img/temporal_header.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--dark-filter);
+  background-blend-mode: overlay;
+
+  position: relative;
+}
+
+.header_image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: var(--margin-lg);
+}
+
+input[type="button"] {
+  background: var(--secondary);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social_bar {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  padding: var(--margin-md);
+  width: 100%;
+}
+
+.social_bar .social_link {
+  color: var(--white);
+  margin: 0 var(--margin-md);
+  stroke-width: 1;
+  height: 32;
+  width: 32;
+}
+
+.block-3 {
+  background-image: url(img/blured.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-3 img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+}
+
+.block-4 {
+  background-image: url(img/drkbg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-4 h3 {
+  text-align: center;
+}
+
+.block-4 p {
+  text-align: justify;
+}
+
+.block-5 {
+  overflow-y: scroll;
+}
+
+.gallery {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: masonry;
+  align-tracks: stretch;
+}
+
+.gallery img {
+  width: 100%;
+}
